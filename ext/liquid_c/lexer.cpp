@@ -3,25 +3,9 @@
 #include "usage.h"
 #include <stdio.h>
 
-const char *symbol_names[TOKEN_END] = {
-    [TOKEN_NONE] = "none",
-    [TOKEN_COMPARISON] = "comparison",
-    [TOKEN_STRING] = "string",
-    [TOKEN_NUMBER] = "number",
-    [TOKEN_IDENTIFIER] = "id",
-    [TOKEN_DOTDOT] = "dotdot",
-    [TOKEN_EOS] = "end_of_string",
-    [TOKEN_PIPE] = "pipe",
-    [TOKEN_DOT] = "dot",
-    [TOKEN_COLON] = "colon",
-    [TOKEN_COMMA] = "comma",
-    [TOKEN_OPEN_SQUARE] = "open_square",
-    [TOKEN_CLOSE_SQUARE] = "close_square",
-    [TOKEN_OPEN_ROUND] = "open_round",
-    [TOKEN_CLOSE_ROUND] = "close_round",
-    [TOKEN_QUESTION] = "question",
-    [TOKEN_DASH] = "dash"
-};
+const char* symbol_names[TOKEN_END];// = {
+
+//};
 
 inline static int is_identifier(char c)
 {

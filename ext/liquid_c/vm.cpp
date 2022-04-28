@@ -436,8 +436,8 @@ VALUE liquid_vm_evaluate(VALUE context, vm_assembler_t *code)
 
     vm_render_until_error_args_t args = {
         .vm = vm,
+        .ip = code->instructions.data,
         .const_ptr = (const size_t *)code->constants.data,
-        .ip = code->instructions.data
     };
     vm_render_until_error((VALUE)&args);
     VALUE ret = vm_stack_pop(vm);
@@ -562,8 +562,8 @@ void liquid_vm_render(block_body_header_t *body, const VALUE *const_ptr, VALUE c
 
     vm_render_until_error_args_t render_args = {
         .vm = vm,
-        .const_ptr = const_ptr,
         .ip = block_body_instructions_ptr(body),
+        .const_ptr = const_ptr,
         .output = output,
     };
     vm_render_rescue_args_t rescue_args = {

@@ -8,6 +8,7 @@ end
 gemspec
 
 gem "liquid", github: "Shopify/liquid", ref: "master"
+gem "rice"
 
 group :test do
   gem "rubocop", "~> 1.24.1", require: false

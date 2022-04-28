@@ -1,5 +1,6 @@
 #if !defined(LIQUID_TOKENIZER_H)
 #define LIQUID_TOKENIZER_H
+#include <rice/rice.hpp>
 
 enum token_type {
     TOKENIZER_TOKEN_NONE = 0,
@@ -38,6 +39,7 @@ extern VALUE cLiquidTokenizer;
 extern const rb_data_type_t tokenizer_data_type;
 #define Tokenizer_Get_Struct(obj, sval) TypedData_Get_Struct(obj, tokenizer_t, &tokenizer_data_type, sval)
 
+extern "C"
 void liquid_define_tokenizer(void);
 void tokenizer_next(tokenizer_t *tokenizer, token_t *token);
 

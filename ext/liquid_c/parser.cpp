@@ -262,6 +262,23 @@ void parse_and_compile_expression(parser_t *p, vm_assembler_t *code)
 
 void liquid_define_parser(void)
 {
+    symbol_names[TOKEN_NONE] = "none";
+    symbol_names[TOKEN_COMPARISON] = "comparison";
+    symbol_names[TOKEN_STRING] = "string";
+    symbol_names[TOKEN_NUMBER] = "number";
+    symbol_names[TOKEN_IDENTIFIER] = "id";
+    symbol_names[TOKEN_DOTDOT] = "dotdot",
+    symbol_names[TOKEN_EOS] = "end_of_string",
+    symbol_names[TOKEN_PIPE] = "pipe",
+    symbol_names[TOKEN_DOT] = "dot",
+    symbol_names[TOKEN_COLON] = "colon",
+    symbol_names[TOKEN_COMMA] = "comma",
+    symbol_names[TOKEN_OPEN_SQUARE] = "open_square",
+    symbol_names[TOKEN_CLOSE_SQUARE] = "close_square",
+    symbol_names[TOKEN_OPEN_ROUND] = "open_round",
+    symbol_names[TOKEN_CLOSE_ROUND] = "close_round",
+    symbol_names[TOKEN_QUESTION] = "question",
+    symbol_names[TOKEN_DASH] = "dash";
     id_to_i = rb_intern("to_i");
     idEvaluate = rb_intern("evaluate");
 

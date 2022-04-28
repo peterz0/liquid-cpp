@@ -3,6 +3,7 @@
 
 #include "lexer.h"
 #include "vm_assembler.h"
+#include <rice/rice.hpp>
 
 typedef struct parser {
     lexer_token_t cur, next;
@@ -18,6 +19,7 @@ lexer_token_t parser_consume_any(parser_t *parser);
 void parse_and_compile_expression(parser_t *p, vm_assembler_t *code);
 VALUE try_parse_constant_expression(parser_t *p);
 
+extern "C"
 void liquid_define_parser(void);
 
 #endif

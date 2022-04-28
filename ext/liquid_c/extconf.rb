@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-require "mkmf"
+require "mkmf-rice"
+
 $CFLAGS << " -std=c11 -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"
+$CXXFLAGS << " -std=c++2a -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fpermissive"
 append_cflags("-fvisibility=hidden")
 # In Ruby 2.6 and earlier, the Ruby headers did not have struct timespec defined
 valid_headers = RbConfig::CONFIG["host_os"] !~ /linux/ || Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.7")
